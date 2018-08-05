@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import Student from './src/Student';
 
 class App extends React.Component {
 
@@ -12,20 +13,20 @@ class App extends React.Component {
     };
   }
 
-  onButtonClicked() {
-    this.setState((prevState, props) => {
-      return {
-        age: prevState.age++
-      };
-    });
-  }
-
+  // onButtonClicked() {
+  //   this.setState((prevState, props) => {
+  //     return {
+  //       age: prevState.age
+  //     };
+  //   });
+  // };
+  // <Button onPress={this.onButtonClicked} title="Add my age"/>
   render() {
     return (
       <View style={styles.container}>
         <Text>{this.state.welcome}</Text>
         <Text>your age is {this.state.age}</Text>
-        <Button onPress={onButtonClicked} title="Add my age"/>
+        <Student name="por" age={24} subject={"computer"}/>
       </View>
     );
   }

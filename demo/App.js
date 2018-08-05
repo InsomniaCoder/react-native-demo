@@ -2,10 +2,18 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 class App extends React.Component {
+
+  constructor(){
+    this.state = {
+      name: 'react-native-demo',
+      welcome: 'Open up App.js to start working on your app!'
+    };
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
+        <Text>{this.state.welcome}</Text>
       </View>
     );
   }

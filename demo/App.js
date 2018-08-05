@@ -11,22 +11,32 @@ class App extends React.Component {
       welcome: 'Open up App.js to start working on your app!!',
       age: 24
     };
+    // this.onAgeChanged = this.onAgeChanged.bind(this);
   }
 
-  // onButtonClicked() {
-  //   this.setState((prevState, props) => {
-  //     return {
-  //       age: prevState.age
-  //     };
-  //   });
-  // };
-  // <Button onPress={this.onButtonClicked} title="Add my age"/>
+  onButtonClicked = () => {
+    this.setState((prevState, props) => {
+      let prevAge = prevState.age; 
+      return {
+        age: prevAge+1
+      };
+    });
+  };
+
+  onAgeChanged(){
+    this.setState({age: 10});
+  }
+
   render() {
+
+    const {name,age,welcome} = this.state;
+
     return (
       <View style={styles.container}>
-        <Text>{this.state.welcome}</Text>
-        <Text>your age is {this.state.age}</Text>
-        <Student name="por" age={24} subject={"computer"}/>
+        <Text>{welcome}</Text>
+        <Text>your age is {age}</Text>
+        <Button onPress={this.onButtonClicked} title="Add my age"/>
+        <Student name={name} age={age} subject={"computer"} onAgeChanged={this.onAgeChanged}/>
       </View>
     );
   }

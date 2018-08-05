@@ -3,10 +3,11 @@ import { StyleSheet, Text, View } from 'react-native';
 
 class App extends React.Component {
 
-  constructor(){
+  constructor(props){
+    super(props);
     this.state = {
       name: 'react-native-demo',
-      welcome: 'Open up App.js to start working on your app!'
+      welcome: 'Open up App.js to start working on your app!!'
     };
   }
 
